@@ -1,0 +1,11 @@
+services:
+  bot:
+    container_name: postfilter
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    restart: unless-stopped
